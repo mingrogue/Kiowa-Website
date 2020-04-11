@@ -1,0 +1,896 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "GuessWat",
+        "version": "1.0"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "operationId": "/",
+                "summary": "List versions",
+                "description": "Lists information about all Jiva GuessWat Service API versions.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n    \"versions\": [\n        {\n            \"status\": \"CURRENT\",\n            \"updated\": \"2012-01-01T00:00:00Z\",\n            \"id\": \"v1.0\",\n            \"links\": [\n                {\n                    \"href\": \"https://dev.guesswat.co/\",\n                    \"rel\": \"self\"\n                }\n            ]\n        }\n    ]\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/create": {
+            "post": {
+                "operationId": "adminCreate",
+                "summary": "Admin Api to create admin user",
+                "description": "Admin api for creating a role based User.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "Email of the new user",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                    {   "description": "Password of the new user",
+                    "in": "body",
+                    "name": "password",
+                    "required": true},
+                    {   "description": "First name of the new user",
+                    "in": "body",
+                    "name": "firstname",
+                    "required": true},
+                    {   "description": "Last name of the new user",
+                    "in": "body",
+                    "name": "lastname",
+                    "required": true},
+                    {   "description": "Role of the new user",
+                    "in": "body",
+                    "name": "role",
+                    "required": true},
+                    {   "description": "Locale of the new user",
+                    "in": "body",
+                    "name": "locale",
+                    "required": true},
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n    \"versions\": [\n        {\n            \"status\": \"CURRENT\",\n            \"updated\": \"2012-01-01T00:00:00Z\",\n            \"id\": \"v1.0\",\n            \"links\": [\n                {\n                    \"href\": \"https://dev.guesswat.co/\",\n                    \"rel\": \"self\"\n                }\n            ]\n        }\n    ]\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/login": {
+            "post": {
+                "operationId": "login",
+                "summary": "Admin Api to login a admin user",
+                "description": "Admin api for logging in the admin user using email and password.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "Email of the user",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                    {   "description": "Password of the user",
+                    "in": "body",
+                    "name": "password",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n \"status\": 200,\n \"data\": [\n   {\n \"_id\": \"5da0688b4b4c7661e0c61b51\",\n \"email\": \"kalyan@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-11T11:33:31.886Z\",\n \"joined_on\": \"2019-10-11T11:33:31.886Z\",\n \"__v\": 0\n },\n  {\n \"_id\": \"5da3776089516b6218257b6a\",\n \"email\": \"hiarpit@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-13T19:13:36.547Z\",\n \"joined_on\": \"2019-10-13T19:13:36.547Z\",\n \"__v\": 0\n },\n   {\n \"_id\": \"5dae9b805f1e83384c98ee4f\",\n \"email\": \"kalyan.kundu@gmail.com\",\n \"displayname\": \"Kalyan Kundu\",\n \"password\": \"\",\n \"joined_on\": \"2019-10-22T06:02:40.514Z\",\n \"__v\": 0\n }\n ],\n \"message\": \"Succesfully Users Retrieved\"\n }"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/logout": {
+            "post": {
+                "operationId": "logout",
+                "summary": "Admin Api to logging out a admin user",
+                "description": "Admin api for logging out the admin user.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n \"status\": 200,\n \"data\": [\n   {\n \"_id\": \"5da0688b4b4c7661e0c61b51\",\n \"email\": \"kalyan@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-11T11:33:31.886Z\",\n \"joined_on\": \"2019-10-11T11:33:31.886Z\",\n \"__v\": 0\n },\n  {\n \"_id\": \"5da3776089516b6218257b6a\",\n \"email\": \"hiarpit@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-13T19:13:36.547Z\",\n \"joined_on\": \"2019-10-13T19:13:36.547Z\",\n \"__v\": 0\n },\n   {\n \"_id\": \"5dae9b805f1e83384c98ee4f\",\n \"email\": \"kalyan.kundu@gmail.com\",\n \"displayname\": \"Kalyan Kundu\",\n \"password\": \"\",\n \"joined_on\": \"2019-10-22T06:02:40.514Z\",\n \"__v\": 0\n }\n ],\n \"message\": \"Succesfully Users Retrieved\"\n }"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/getall": {
+            "post": {
+                "operationId": "getall",
+                "summary": "Admin Api to get all users",
+                "description": "Admin api for getting all users GuessWat Service API versions.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n \"status\": 200,\n \"data\": [\n   {\n \"_id\": \"5da0688b4b4c7661e0c61b51\",\n \"email\": \"kalyan@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-11T11:33:31.886Z\",\n \"joined_on\": \"2019-10-11T11:33:31.886Z\",\n \"__v\": 0\n },\n  {\n \"_id\": \"5da3776089516b6218257b6a\",\n \"email\": \"hiarpit@gmail.com\",\n \"password\": \"96a2c08d7185775721c9be88a39f6365\",\n \"firstname\": \"Kalyan\",\n \"lastname\": \"Kundu\",\n \"dob\": \"2019-10-13T19:13:36.547Z\",\n \"joined_on\": \"2019-10-13T19:13:36.547Z\",\n \"__v\": 0\n },\n   {\n \"_id\": \"5dae9b805f1e83384c98ee4f\",\n \"email\": \"kalyan.kundu@gmail.com\",\n \"displayname\": \"Kalyan Kundu\",\n \"password\": \"\",\n \"joined_on\": \"2019-10-22T06:02:40.514Z\",\n \"__v\": 0\n }\n ],\n \"message\": \"Succesfully Users Retrieved\"\n }"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/getbyemail":{
+            "post":{
+                "operationId": "getbyemail",
+                "summary": "Admin Api for getting user by registered email",
+                "description": "Admin Api for getting user by registered email.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+				{   "description": "Email of the searched user",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/sendnewpwd":{
+            "post":{
+                "operationId": "sendnewpwd",
+                "summary": "Admin Api for resetting the password and send via email",
+                "description": "Admin Api for resetting the temporary password for admin user and notify via email.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "Email of the user",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                    {   "description": "token",
+                        "in": "header",
+                        "name": "token",
+                        "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/changepwd":{
+            "post":{
+                "operationId": "changepwd",
+                "summary": "Admin Api for changing the password on old passwordl",
+                "description": "Admin Api for changing the password authenticating by old password.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "Existing password of the user",
+                        "in": "body",
+                        "name": "password",
+                        "required": true},
+                    {   "description": "New password of the user",
+                        "in": "body",
+                        "name": "newpassword",
+                        "required": true},
+                    {   "description": "token",
+                        "in": "header",
+                        "name": "token",
+                        "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/deleteuser":{
+            "post":{
+                "operationId": "deleteuser",
+                "summary": "Admin Api for making other admin users (lingua, creative, merchant etc) inactive",
+                "description": "Admin Api for deactivating other admin users like lingua, merch head, merch team etc.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                {   "description": "Email of the user",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/admin/updateuser":{
+            "post":{
+                "operationId": "updateuser",
+                "summary": "Admin Api for updating the data fields of other admin users (lingua, creative, merchant etc) inactive",
+                "description": "Admin Api for updating other admin users in the database, like lingua, merch head, merch team etc.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                {   "description": "Email of the user",
+                "in": "body",
+                "name": "email",
+                "required": true},
+                {   "description": "Password of the user",
+                "in": "body",
+                "name": "password",
+                "required": true},
+                {   "description": "First name of the user",
+                "in": "body",
+                "name": "firstname",
+                "required": true},
+                {   "description": "last name of the user",
+                "in": "body",
+                "name": "lastname",
+                "required": true},
+                {   "description": "role of the user",
+                "in": "body",
+                "name": "role",
+                "required": true},
+                {   "description": "Locale of the user",
+                "in": "body",
+                "name": "locale",
+                "required": true},
+                {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "{\n    \"versions\": [\n        {\n            \"status\": \"CURRENT\",\n            \"updated\": \"2012-01-01T00:00:00Z\",\n            \"id\": \"v1.0\",\n            \"links\": [\n                {\n                    \"href\": \"https://dev.guesswat.co/\",\n                    \"rel\": \"self\"\n                }\n            ]\n        }\n    ]\n}"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/types":{
+            "get":{
+                "operationId": "types",
+                "summary": "Api for getting all types of words",
+                "description": "Api for getting all the types of the words table.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "[\"movie\", \"game\", \"person\"]"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/countriesbylang":{
+            "get":{
+                "operationId": "countriesbylang",
+                "summary": "Api for getting all types of words",
+                "description": "Api for getting all the types of the words table.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "language",
+                    "in": "params",
+                    "name": "lang",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "[\"US\", \"UK\", \"CA\", \"IN\", \"AU\", \"Oth\", \"All\"]"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/word/unapprovedwords":{
+            "post":{
+                "operationId": "unapprovedwords",
+                "summary": "Api for getting all unapproved words from the words table",
+                "description": "Api for getting all the un approved words from the words table, the email sent through the URL is taken and the corresponding role is focused on. If that role has permission to read words, then all the unapproved words from word table are returned.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/allwords":{
+            "post":{
+                "operationId": "allwords",
+                "summary": "Api for getting all words from the words table",
+                "description": "Api for getting all the words from the words table, the email sent through the URL is taken and the corresponding role is focused on. If that role has permission to read words, then all the words from word table are returned.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/curate":{
+            "post":{
+                "operationId": "curate",
+                "summary": "Api for adding word words table",
+                "description": "Api for adding word in word table with approved = false.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                        "in": "header",
+                        "name": "token",
+                        "required": true},
+                    {   "description": "The word which is to be added",
+                        "in": "body",
+                        "name": "word",
+                        "required": true},
+                    {   "description": "Types of the word which are to be added for the word in database",
+                        "in": "body",
+                        "name": "types",
+                        "required": true},
+                    {   "description": "The countries associated with the word",
+                        "in": "body",
+                        "name": "country_codes",
+                        "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/add":{
+            "post":{
+                "operationId": "add",
+                "summary": "Api for adding word words table which will be auto approved",
+                "description": "Api for adding auto approved words into word database.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                        "in": "header",
+                        "name": "token",
+                        "required": true},
+                    {   "description": "The word which is to be added",
+                        "in": "body",
+                        "name": "word",
+                        "required": true},
+                    {   "description": "Types of the word which are to be added for the word in database",
+                        "in": "body",
+                        "name": "types",
+                        "required": true},
+                    {   "description": "The countries associated with the word",
+                        "in": "body",
+                        "name": "country_codes",
+                        "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/translate":{
+            "post":{
+                "operationId": "translate",
+                "summary": "Api for translating the word from source language to target language",
+                "description": "Api for translating the word from source language to target language.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "The word which is to be translated",
+                        "in": "body",
+                        "name": "word",
+                        "required": true},
+                    {   "description": "Type of the word to be translated",
+                    "in": "body",
+                    "name": "type",
+                    "required": true},
+                    {   "description": "Source language code of the word",
+                        "in": "body",
+                        "name": "origin",
+                        "required": true},
+                    {   "description": "Target language code where the word will be translated",
+                        "in": "body",
+                        "name": "target",
+                        "required": true}
+                    ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/role/roles":{
+            "get":{
+                "operationId": "roles",
+                "summary": "Api for getting all possible roles",
+                "description": "Api for getting all role in the database",
+                "produces": [
+                    "array"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/role/update":{
+            "post":{
+                "operationId": "update",
+                "summary": "Api for updating a role of an admin user",
+                "description": "Api for updating the role of an existing admin in the database",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "Email Id of the existing user whose name is to be changed",
+                    "in": "body",
+                    "name": "email",
+                    "required": true},
+                    {   "description": "Role of the user which will be updated",
+                    "in": "body",
+                    "name": "rolename",
+                    "required": true}
+                   ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/create":{
+            "post":{
+                "operationId": "eventCreate",
+                "summary": "Api for a new event",
+                "description": "Api for new event creation",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "Name of the event",
+                    "in": "body",
+                    "name": "eventname",
+                    "required": true},
+                    {   "description": "Start date of event",
+                    "in": "body",
+                    "name": "eventstart",
+                    "required": true},
+                    {   "description": "End date of event",
+                    "in": "body",
+                    "name": "eventend",
+                    "required": true},
+                    {   "description": "Description of event",
+                    "in": "body",
+                    "name": "description",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/events":{
+            "post":{
+                "operationId": "events",
+                "summary": "Api for getting all the events",
+                "description": "Api for all the created events",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/parse":{
+            "post":{
+                "operationId": "parse",
+                "summary": "Api for parsing words from url",
+                "description": "Api for parsing words from given url",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "url",
+                    "in": "body",
+                    "name": "url",
+                    "required": true}
+                ],
+                "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/word/notify":{
+            "post":{
+                "operationId": "notify",
+                "summary": "Api for notifying new words to uther lingua persons",
+                "description": "Api for notifying new words to other lingua persons who is of different language",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "The category of word",
+                    "in": "body",
+                    "name": "type",
+                    "required": true},
+                    {   "description": "Content of the word which will be notified",
+                    "in": "body",
+                    "name": "word",
+                    "required": true},
+                    {   "description": "The country code of the Linguist who is notifying the word",
+                    "in": "body",
+                    "name": "country_code",
+                    "required": true}
+                ],
+                "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "/merch/campaign/:campaignum":{
+            "get":{
+                "operationId": "campaign",
+                "summary": "Api for getting merchendise by canpaignum",
+                "description": "Api for getting merchendise by canpaignum from the words table.\n",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "description": "The campaign number of the merchendise",
+                    "in": "path",
+                    "name": "campainum",
+                    "required": true}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "[]"
+                        }
+                    }
+                }
+            }
+        },
+        "/merch/create":{
+            "post":{
+                "operationId": "create",
+                "summary": "Api for uploading image to server",
+                "description": "Api for uploading image to server into specific location",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "Title of the merchendise",
+                    "in": "body",
+                    "name": "title",
+                    "required": true},
+                    {   "description": "Description of the merch",
+                    "in": "body",
+                    "name": "description",
+                    "required": true},
+                    {   "description": "Likes of the merch",
+                    "in": "body",
+                    "name": "likes",
+                    "required": true},
+                    {   "description": "Exclusivity",
+                    "in": "body",
+                    "name": "exclusivity",
+                    "required": true},
+                    {   "description": "hashtag",
+                    "in": "body",
+                    "name": "hashtag",
+                    "required": true},
+                    {   "description": "urltobuy",
+                    "in": "body",
+                    "name": "urltobuy",
+                    "required": true},
+                    {   "description": "Position",
+                    "in": "body",
+                    "name": "Position",
+                    "required": true},
+                    {   "description": "campaignum",
+                    "in": "body",
+                    "name": "campaignum",
+                    "required": true}
+                ],
+                "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "admin/notifiedwords":{
+            "post":{
+                "operationId": "notifiedwords",
+                "summary": "Api for showing all the words which are currently notified for present user",
+                "description": "Api for showing all the words which are not approved by a particular user",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "word/parseromit":{
+            "post":{
+                "operationId": "parseromit",
+                "summary": "Api for removing the words from the words patrse",
+                "description": "Api for removing the words from the words patrse for selected language",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "The word to be omitted from the parser",
+                    "in": "body",
+                    "name": "omitword",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "word/approved":{
+            "post":{
+                "operationId": "approved",
+                "summary": "Api for getting all approved words for one user",
+                "description": "Api for getting all approved words for current Linguist user!!",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        },
+        "word/delete":{
+            "post":{
+                "operationId": "delete",
+                "summary": "Api for deleting selected word for logged in user",
+                "description": "Api for deleting selected word for logged in admin, with his language code!!",
+                "produces": [
+                    "array"
+                ],
+                "parameters": [
+                    {   "description": "token",
+                    "in": "header",
+                    "name": "token",
+                    "required": true},
+                    {   "description": "word to be ommited",
+                    "in": "body",
+                    "name": "delword",
+                    "required": true}
+                    ],
+                    "responses": {
+                        "200": {
+                        "description": "200 response",
+                        "examples": {
+                            "application/json": "The json for the user"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
