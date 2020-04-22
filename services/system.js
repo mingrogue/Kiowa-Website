@@ -11,6 +11,8 @@ exports.login = async function (data) {
         if(Validator.validateparams(data, ['email', 'password', 'role'])) {
             if (data.role == 'Admin'){
                 var admin = await Admin.findOne( {email: data.email, password: data.password, active: true} );
+                console.log(admin);
+                
                 if(admin) {
                     var token = randomstring.generate(32)
                     //console.log("Token:" + token)

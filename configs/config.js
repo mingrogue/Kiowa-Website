@@ -1,5 +1,5 @@
 module.exports = {
-  mongourl: "mongodb://localhost:27017/Kiowa",
+  mongourl: "mongodb://localhost:27017/kiowa",
   pythonPath:"C:\\Users\\sonic\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
   amazonSES: {
     region: "us-east-1",

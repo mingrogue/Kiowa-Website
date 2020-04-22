@@ -24,6 +24,7 @@
     "mongoose-double": "0.0.1",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
+    "nodemon": "^2.0.3",
     "promise": "^8.0.3",
     "randomstring": "^1.1.5",
     "request": "^2.88.0",

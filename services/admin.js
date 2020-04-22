@@ -60,7 +60,7 @@ exports.updateAdmin = async function (token, data) {
             throw new Error("Permission Denied !!")
         }
 
-        var updated = await Admin.findOneAndUpdate({ email: data.email }, data, {new : true})
+        var updated = await Admin.findOneAndUpdate({ email: admin.email }, data, {new : true})
         if(updated){
             return {message: "Updated all details of " + data.email}
         }

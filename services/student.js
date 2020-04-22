@@ -13,7 +13,7 @@ exports.createStudent = async function (token, data) {
             }
             var newpass = "KiwoaStudent"//randomstring.generate(20)
             var md5pass = md5(newpass)
-            var student = await Student.create({name: data.name, email: data.email, role: data.role, password: newpass, }) 
+            var student = await Student.create({name: data.name, email: data.email, role: data.role, password: newpass, coursecode: data.coursecode}) 
             
             return {data:student, message: "Student has been created with name: " + data.name + "and the password is " + newpass}
         }
