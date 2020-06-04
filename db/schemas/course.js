@@ -14,4 +14,24 @@ const CourseSchema  = new mongoose.Schema({
 
 const Course = mongoose.model('course', CourseSchema)
 
+/**
+ * @swagger
+ * definitions:
+ *   Course:
+ *     type: object
+ *     properties:
+ *       name:
+ *         description: name of the course
+ *         type: string
+ *       description:
+ *         description: description of the course
+ *         type: string
+ *       code:
+ *         description: code given to the course
+ *         type: number
+ *       active:
+ *         description: used to determine if the user is active of not
+ *         type: boolean
+ */
+
 module.exports = Course;

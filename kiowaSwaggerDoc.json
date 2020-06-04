@@ -1,0 +1,1145 @@
+{
+  "info": {
+    "title": "Kiowa Backend",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "securityDefinitions": {
+    "APIKeyHeader": {
+      "type": "apiKey",
+      "name": "session",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/event/create": {
+      "post": {
+        "summary": "creates event",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Event"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/event/update": {
+      "post": {
+        "summary": "creates event",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Event"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/event/delete": {
+      "post": {
+        "summary": "deletes event",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete event",
+            "description": "deletes the event having the specified code",
+            "schema": {
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/event/getbycode": {
+      "post": {
+        "summary": "gets event by code",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "get event",
+            "description": "gets event by code",
+            "schema": {
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/course/create": {
+      "post": {
+        "summary": "creates course",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/course/delete": {
+      "post": {
+        "summary": "deletes course",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete course",
+            "description": "deletes the course having the specified code",
+            "schema": {
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/course/update": {
+      "post": {
+        "summary": "updates course",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/course/getbycode": {
+      "post": {
+        "summary": "gets course by code",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "get course",
+            "description": "gets course by code",
+            "schema": {
+              "type": "object",
+              "required": [
+                "code"
+              ],
+              "properties": {
+                "code": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/student/update": {
+      "post": {
+        "summary": "updates student",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/student/changepwd": {
+      "post": {
+        "summary": "changes the password of student",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "changes the password of student",
+            "description": "changes the password of student",
+            "schema": {
+              "type": "object",
+              "required": [
+                "password",
+                "newpassword"
+              ],
+              "properties": {
+                "password": {
+                  "type": "string",
+                  "description": "this is the old password"
+                },
+                "newpassword": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/create": {
+      "post": {
+        "summary": "creates admin",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/delete": {
+      "post": {
+        "summary": "deletes admin",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete admin",
+            "description": "deletes the admin having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/activate": {
+      "post": {
+        "summary": "activates admin",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "activate admin",
+            "description": "activates the admin having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/update": {
+      "post": {
+        "summary": "updates admin",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Admin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getall": {
+      "get": {
+        "summary": "gets all admins",
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getbyemail": {
+      "post": {
+        "summary": "get admin by email",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gets admin by email",
+            "description": "gets the admin having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/changepwd": {
+      "post": {
+        "summary": "changes the password of admin",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "changes the password of admin",
+            "description": "changes the password of admin",
+            "schema": {
+              "type": "object",
+              "required": [
+                "password",
+                "newpassword"
+              ],
+              "properties": {
+                "password": {
+                  "type": "string"
+                },
+                "newpassword": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/create/student": {
+      "post": {
+        "summary": "creates student",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Student"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/delete/student": {
+      "post": {
+        "summary": "deletes student",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete student",
+            "description": "deletes the student having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getbyemail/student": {
+      "post": {
+        "summary": "get student by email",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gets studnet by email",
+            "description": "gets the student having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getall/student": {
+      "get": {
+        "summary": "gets all students",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/changepwd/student": {
+      "post": {
+        "summary": "changes the password of student",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "changes the password of student",
+            "description": "changes the password of student",
+            "schema": {
+              "type": "object",
+              "required": [
+                "password",
+                "newpassword"
+              ],
+              "properties": {
+                "password": {
+                  "type": "string"
+                },
+                "newpassword": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getall/teacher": {
+      "get": {
+        "summary": "gets all teachers",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/getbyemail/teacher": {
+      "post": {
+        "summary": "get teacher by email",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gets studnet by email",
+            "description": "gets the teacher having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/create/teacher": {
+      "post": {
+        "summary": "creates teacher",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Teacher"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/admin/delete/teacher": {
+      "post": {
+        "summary": "deletes teacher",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "delete teacher",
+            "description": "deletes the teacher having the specified email id",
+            "schema": {
+              "type": "object",
+              "required": [
+                "email"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/teacher/update": {
+      "post": {
+        "summary": "updates teacher",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Teacher"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/teacher/changepwd": {
+      "post": {
+        "summary": "changes the password of teacher",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "changes the password of teacher",
+            "description": "changes the password of teacher",
+            "schema": {
+              "type": "object",
+              "required": [
+                "password",
+                "newpassword"
+              ],
+              "properties": {
+                "password": {
+                  "type": "string"
+                },
+                "newpassword": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Admin": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "description": "used for identification",
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "firstname": {
+          "description": "first name of admin user",
+          "type": "number"
+        },
+        "lastname": {
+          "description": "last name of admin user",
+          "type": "object"
+        },
+        "active": {
+          "description": "used to determine if the user is active of not",
+          "type": "boolean"
+        }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "name of the course",
+          "type": "string"
+        },
+        "description": {
+          "description": "description of the course",
+          "type": "string"
+        },
+        "code": {
+          "description": "code given to the course",
+          "type": "number"
+        },
+        "active": {
+          "description": "used to determine if the user is active of not",
+          "type": "boolean"
+        }
+      }
+    },
+    "Event": {
+      "type": "object",
+      "properties": {
+        "eventname": {
+          "description": "name of the event",
+          "type": "string"
+        },
+        "creator": {
+          "description": "id of the creator",
+          "type": "string"
+        },
+        "eventstart": {
+          "description": "date of the start of event",
+          "type": "string"
+        },
+        "eventend": {
+          "description": "date of the end of event",
+          "type": "string"
+        },
+        "description": {
+          "description": "description of the event",
+          "type": "string"
+        },
+        "code": {
+          "description": "code givento the event",
+          "type": "string"
+        },
+        "active": {
+          "description": "used to determine if the event is active of not",
+          "type": "boolean"
+        }
+      }
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "name of the student user",
+          "type": "string"
+        },
+        "email": {
+          "description": "email of the student user",
+          "type": "string"
+        },
+        "password": {
+          "description": "password",
+          "type": "string"
+        },
+        "teacher": {
+          "description": "teachers assigned to the student user",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "coursecode": {
+          "description": "coursecodes assigned to the student",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent": {
+          "description": "parent of the student",
+          "type": "string"
+        },
+        "exam": {
+          "description": "exams student is appearing for",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "school": {
+          "description": "school of the student",
+          "type": "string"
+        },
+        "role": {
+          "description": "role",
+          "type": "string"
+        },
+        "active": {
+          "description": "used to determine if the user is active of not",
+          "type": "boolean"
+        }
+      }
+    },
+    "Teacher": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "name of the teacher user",
+          "type": "string"
+        },
+        "email": {
+          "description": "email of the teacher user",
+          "type": "string"
+        },
+        "password": {
+          "description": "password",
+          "type": "string"
+        },
+        "description": {
+          "description": "teacher's description",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cources": {
+          "description": "coursecodes assigned to the teacher",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "role": {
+          "description": "parent of the teacher",
+          "type": "string"
+        },
+        "active": {
+          "description": "used to determine if the user is active of not",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "responses": {},
+  "parameters": {},
+  "tags": []
+}
