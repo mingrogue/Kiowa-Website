@@ -77,7 +77,7 @@ exports.getTeacherByEmail = async function (token, data) {
 
 exports.getAllTeachers = async function (token, query) {
     try {
-        if(Validator.validatelogin(token)) {
+        if(Validator.validate(token)) {
             var teachers = await Teacher.find(query)
             return teachers;
         }

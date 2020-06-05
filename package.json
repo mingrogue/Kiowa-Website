@@ -1,11 +1,11 @@
 {
-  "name": "chatserver",
+  "name": "kiowaserver",
   "version": "1.0.0",
   "description": "Kiowa Chat Server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "test"
+    "documentation": "swagger-jsdoc-generator swagger.js > kiowaSwaggerDoc.json"
   },
   "author": "Kiowa Technologies",
   "dependencies": {
@@ -28,6 +28,6 @@
     "promise": "^8.0.3",
     "randomstring": "^1.1.5",
     "request": "^2.88.0",
-    "swagger-ui-express": "^4.1.2"
+    "swagger-jsdoc-generator": "^1.0.3"
   }
 }
